@@ -3,7 +3,6 @@
 /*
  *  *file_exists -- checks if file exists
  *   */
-static inline int file_exists(char const *file) { return access(file, F_OK); }
 
 void clear_cache() {
   // Remove cache
@@ -159,7 +158,7 @@ int main(int argc, char **argv) {
                        int sidx = i - half_num_data;
 
                        int jid = i % 4;
-                       switch (jid) {
+                       switch (jid) {;
                        case 0:
                          D_RW(bt)->btree_insert(keys[i], (char *)keys[i]);
                          for (int j = 0; j < 4; j++)

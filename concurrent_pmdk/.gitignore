@@ -1,0 +1,4 @@
+./btree_concurrent
+./btree_concurrent_mixed
+*.a
+*.o
