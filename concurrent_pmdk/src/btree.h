@@ -927,9 +927,9 @@ public:
   // print a node
   void print() {
     if (hdr.leftmost_ptr == NULL)
-      printf("[%d] leaf %x \n", this->hdr.level, pmemobj_oid(this).off);
+      printf("[%d] leaf %lx \n", this->hdr.level, pmemobj_oid(this).off);
     else
-      printf("[%d] internal %x \n", this->hdr.level, pmemobj_oid(this).off);
+      printf("[%d] internal %lx \n", this->hdr.level, pmemobj_oid(this).off);
     printf("last_index: %d\n", hdr.last_index);
     printf("switch_counter: %d\n", hdr.switch_counter);
     printf("search direction: ");
@@ -939,12 +939,12 @@ public:
       printf("<-\n");
 
     if (hdr.leftmost_ptr != NULL)
-      printf("%x ", hdr.leftmost_ptr);
+      printf("%p ", hdr.leftmost_ptr);
 
     for (int i = 0; records[i].ptr != NULL; ++i)
-      printf("%ld,%x ", records[i].key, records[i].ptr);
+      printf("%ld,%p ", records[i].key, records[i].ptr);
 
-    printf("%x ", hdr.sibling_ptr.oid.off);
+    printf("%lx ", hdr.sibling_ptr.oid.off);
 
     printf("\n");
   }

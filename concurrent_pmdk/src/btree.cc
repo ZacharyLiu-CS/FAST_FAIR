@@ -41,7 +41,7 @@ char *btree::btree_search(entry_key_t key) {
   }
 
   if (!t) {
-    printf("NOT FOUND %lu, t = %x\n", key, t);
+    printf("NOT FOUND %lu, t = %lx\n", key, t);
     return NULL;
   }
 
@@ -167,7 +167,7 @@ void btree::btree_search_range(entry_key_t min, entry_key_t max,
 void btree::printAll() {
   int total_keys = 0;
   TOID(page) leftmost = root;
-  printf("root: %x\n", root.oid.off);
+  printf("root: %lx\n", root.oid.off);
   if (root.oid.off) {
     do {
       TOID(page) sibling = leftmost;
