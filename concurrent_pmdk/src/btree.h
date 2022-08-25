@@ -33,6 +33,8 @@
 
 #define IS_FORWARD(c) (c % 2 == 0)
 
+namespace fastfair{
+
 class btree;
 class page;
 
@@ -969,3 +971,4 @@ public:
   }
 };
 
+}

@@ -12,8 +12,8 @@ all: main
 main: src/test.cpp
 	g++ ${CFLAGS} -c src/btree.cc
 	ar -r libfastfair.a btree.o
-	g++ $(CFLAGS) -o btree_concurrent src/test.cpp src/libfastfair.a $(LIBS) -DCONCURRENT
-	g++ $(CFLAGS) -o btree_concurrent_mixed src/test.cpp  src/libfastfair.a $(LIBS) -DCONCURRENT -DMIXED
+	g++ $(CFLAGS) -o btree_concurrent src/test.cpp libfastfair.a $(LIBS) -DCONCURRENT
+	g++ $(CFLAGS) -o btree_concurrent_mixed src/test.cpp  libfastfair.a $(LIBS) -DCONCURRENT -DMIXED
 	
 clean: 
 	rm $(output)
